@@ -18,7 +18,7 @@ Les manifests sont dans `k8s/` et peuvent être ciblés par ArgoCD avec Kustomiz
 L'image par défaut est :
 
 ```text
-ghcr.io/tenshi-lab-kube/admin-gate:latest
+ghcr.io/tenshi-lab-kube/admin-gate:main
 ```
 
 À adapter si ton pipeline de build pousse l'image ailleurs.

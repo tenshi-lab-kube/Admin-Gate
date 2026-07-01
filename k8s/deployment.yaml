@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: admin-gate
-          image: ghcr.io/tenshi-lab-kube/admin-gate:latest
+          image: ghcr.io/tenshi-lab-kube/admin-gate:main
           imagePullPolicy: Always
           ports:
             - containerPort: 80
