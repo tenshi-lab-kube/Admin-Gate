@@ -1,0 +1,26 @@
+# Admin Gate
+
+Petit site statique kawaii pour la question : "Veux-tu être mon admin ?".
+
+## Build local
+
+```bash
+docker build -t admin-gate .
+docker run --rm -p 8080:80 admin-gate
+```
+
+Puis ouvrir <http://localhost:8080>.
+
+## Kubernetes / ArgoCD
+
+Les manifests sont dans `k8s/` et peuvent être ciblés par ArgoCD avec Kustomize.
+
+L'image par défaut est :
+
+```text
+ghcr.io/tenshi-lab-kube/admin-gate:latest
+```
+
+À adapter si ton pipeline de build pousse l'image ailleurs.
+
+Pense aussi à remplacer `admin-gate.example.com` dans `k8s/ingress.yaml` par ton vrai domaine.

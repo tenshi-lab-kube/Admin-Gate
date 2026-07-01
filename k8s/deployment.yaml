@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-gate
+  labels:
+    app: admin-gate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-gate
+  template:
+    metadata:
+      labels:
+        app: admin-gate
+    spec:
+      containers:
+        - name: admin-gate
+          image: ghcr.io/tenshi-lab-kube/admin-gate:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 3
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 20
