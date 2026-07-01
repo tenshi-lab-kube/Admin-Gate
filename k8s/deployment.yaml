@@ -13,6 +13,8 @@ spec:
     metadata:
       labels:
         app: admin-gate
+      annotations:
+        app.kubernetes.io/restarted-at: "2026-07-01T21:38:53+02:00"
     spec:
       containers:
         - name: admin-gate

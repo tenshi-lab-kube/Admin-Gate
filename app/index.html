@@ -73,7 +73,7 @@
       }
 
       main {
-        width: min(92vw, 590px);
+        width: min(92vw, 650px);
         min-height: 440px;
         display: grid;
         place-items: center;
@@ -82,7 +82,7 @@
 
       .panel {
         width: 100%;
-        padding: clamp(30px, 8vw, 58px);
+        padding: clamp(26px, 7vw, 52px);
         text-align: center;
         border: 3px solid rgba(255, 255, 255, 0.76);
         border-radius: 8px;
@@ -147,7 +147,7 @@
       }
 
       h2 {
-        font-size: clamp(2.25rem, 9vw, 4.45rem);
+        font-size: clamp(2.1rem, 8vw, 4.1rem);
       }
 
       .subtitle {
@@ -210,6 +210,214 @@
         letter-spacing: 8px;
       }
 
+      .gift-buttons {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .gift-button {
+        min-width: 0;
+        min-height: 64px;
+        padding: 0 14px;
+        border: 3px solid rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        background: linear-gradient(135deg, #fff7c8, #ffd8ec);
+        font-size: 0.95rem;
+        line-height: 1.15;
+      }
+
+      .gift-button:hover {
+        transform: translateY(-3px);
+      }
+
+      .gift-box {
+        display: none;
+        margin-top: 22px;
+        padding: 20px;
+        border: 3px dashed rgba(255, 143, 199, 0.55);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        text-align: left;
+      }
+
+      .gift-box.is-open {
+        display: block;
+      }
+
+      .gift-box h3 {
+        margin: 0 0 12px;
+        font-size: 1.35rem;
+        line-height: 1.2;
+        text-align: center;
+      }
+
+      .gift-box p {
+        margin: 0;
+        line-height: 1.55;
+      }
+
+      .video-jukebox {
+        position: relative;
+        width: min(430px, 100%);
+        margin: 0 auto 14px;
+        padding: 22px 18px 18px;
+        border: 6px solid #fff;
+        border-radius: 48% 48% 8px 8px / 28% 28% 8px 8px;
+        background:
+          radial-gradient(circle at 18% 16%, #fff7b8 0 7px, transparent 8px),
+          radial-gradient(circle at 82% 16%, #fff7b8 0 7px, transparent 8px),
+          linear-gradient(150deg, #ff73b7 0%, #ffb6d8 30%, #ffd86f 62%, #93efd5 100%);
+        box-shadow:
+          inset 0 -18px rgba(84, 50, 73, 0.14),
+          inset 0 0 0 8px rgba(255, 255, 255, 0.3),
+          0 16px 28px rgba(122, 69, 101, 0.22);
+      }
+
+      .video-jukebox::before,
+      .video-jukebox::after {
+        content: "";
+        position: absolute;
+        top: 48px;
+        width: 22px;
+        height: 72px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.62);
+        box-shadow: inset 0 0 0 4px rgba(255, 105, 173, 0.25);
+      }
+
+      .video-jukebox::before {
+        left: 16px;
+      }
+
+      .video-jukebox::after {
+        right: 16px;
+      }
+
+      .video-title {
+        width: min(250px, 78%);
+        margin: 0 auto 12px;
+        padding: 11px;
+        border: 3px solid rgba(84, 50, 73, 0.2);
+        border-radius: 8px;
+        background: #fff8fb;
+        color: #ff4f9e;
+        font-weight: 900;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .video-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border: 5px solid rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        background: #2b1e28;
+        box-shadow: 0 10px 18px rgba(84, 50, 73, 0.2);
+      }
+
+      .video-loader {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 18px;
+        border: 0;
+        border-radius: 0;
+        background:
+          linear-gradient(rgba(43, 30, 40, 0.18), rgba(43, 30, 40, 0.7)),
+          url("https://i.ytimg.com/vi/w0FjlTYtWTA/hqdefault.jpg") center / cover;
+        color: #fff;
+        font-size: 1.05rem;
+        text-decoration: none;
+        text-shadow: 0 2px 8px rgba(43, 30, 40, 0.8);
+        box-shadow: none;
+      }
+
+      .video-loader span {
+        display: inline-grid;
+        min-width: 92px;
+        min-height: 52px;
+        place-items: center;
+        padding: 0 18px;
+        border: 3px solid rgba(255, 255, 255, 0.9);
+        border-radius: 999px;
+        background: rgba(255, 79, 158, 0.92);
+      }
+
+      .video-loader:hover span {
+        transform: scale(1.05);
+      }
+
+      .jukebox-controls {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .speaker {
+        min-height: 54px;
+        border: 4px solid rgba(255, 255, 255, 0.78);
+        border-radius: 8px;
+        background:
+          repeating-linear-gradient(90deg, rgba(84, 50, 73, 0.2) 0 5px, transparent 5px 10px),
+          rgba(255, 255, 255, 0.38);
+      }
+
+      .play-lights {
+        display: flex;
+        gap: 8px;
+      }
+
+      .play-lights span {
+        width: 18px;
+        height: 18px;
+        border: 3px solid rgba(255, 255, 255, 0.85);
+        border-radius: 999px;
+        background: #ff4f9e;
+        box-shadow: 0 0 14px rgba(255, 79, 158, 0.45);
+      }
+
+      .play-lights span:nth-child(2) {
+        background: #fff27d;
+        box-shadow: 0 0 14px rgba(255, 242, 125, 0.58);
+      }
+
+      .play-lights span:nth-child(3) {
+        background: #6ee7c8;
+        box-shadow: 0 0 14px rgba(110, 231, 200, 0.5);
+      }
+
+      .video-help {
+        margin-top: 12px;
+        font-size: 0.95rem;
+        text-align: center;
+      }
+
+      .video-help a {
+        color: #db3d8b;
+        font-weight: 900;
+      }
+
+      .contract {
+        padding: 18px;
+        border: 2px solid rgba(84, 50, 73, 0.25);
+        border-radius: 8px;
+        background: #fffdf7;
+      }
+
+      .signature {
+        margin-top: 18px;
+        font-size: 1.15rem;
+        font-weight: 900;
+        text-align: right;
+      }
+
       body.accepted .question {
         display: none;
       }
@@ -238,6 +446,10 @@
           min-width: 88px;
           padding: 0 18px;
         }
+
+        .gift-buttons {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -249,25 +461,65 @@
     <main>
       <section class="panel question" aria-label="Question">
         <div class="mascot" aria-hidden="true"><span class="mouth"></span></div>
-        <h1>Veux-tu être mon admin ?</h1>
-        <p class="subtitle">Promis, il y aura des permissions, du chaos organisé et beaucoup trop de rose.</p>
+        <h1>Veux-tu &ecirc;tre mon admin ?</h1>
+        <p class="subtitle">Promis, il y aura des permissions, du chaos organis&eacute; et beaucoup trop de rose.</p>
         <div class="buttons">
           <button id="yesButton" type="button">Oui</button>
           <button id="noButton" type="button">Non</button>
         </div>
       </section>
 
-      <section class="panel success" aria-label="Réponse">
+      <section class="panel success" aria-label="R&eacute;ponse">
         <div class="mascot" aria-hidden="true"><span class="mouth"></span></div>
         <h2>je savais que tu dirais oui</h2>
-        <div class="hearts" aria-hidden="true">♡ ♡ ♡</div>
+        <div class="hearts" aria-hidden="true">&hearts; &hearts; &hearts;</div>
+        <div class="gift-buttons" aria-label="Cadeaux">
+          <button class="gift-button" type="button" data-gift="jukebox">Cadeau 1</button>
+          <button class="gift-button" type="button" data-gift="monologue">Cadeau 2</button>
+          <button class="gift-button" type="button" data-gift="contract">Cadeau 3</button>
+        </div>
+
+        <article class="gift-box" id="giftBox" aria-live="polite"></article>
       </section>
     </main>
 
     <script>
       const yesButton = document.querySelector("#yesButton");
       const noButton = document.querySelector("#noButton");
+      const giftBox = document.querySelector("#giftBox");
+      const giftButtons = document.querySelectorAll("[data-gift]");
       let noClicks = 0;
+
+      const gifts = {
+        jukebox: `
+          <h3>Petit jukebox officiel</h3>
+          <div class="video-jukebox">
+            <div class="video-title">Musique cadeau</div>
+            <div class="video-frame">
+              <a class="video-loader" href="https://www.youtube.com/watch?v=w0FjlTYtWTA" target="_blank" rel="noreferrer">
+                <span>Lire sur YouTube</span>
+              </a>
+            </div>
+            <div class="jukebox-controls" aria-hidden="true">
+              <div class="speaker"></div>
+              <div class="play-lights"><span></span><span></span><span></span></div>
+              <div class="speaker"></div>
+            </div>
+          </div>
+          <p>Le jukebox garde la jolie vitrine et ouvre la musique cadeau directement sur YouTube.</p>
+        `,
+        monologue: `
+          <h3>Monologue de recrutement</h3>
+          <p>Devenir mon admin, c'est accepter une mission noble : garder l'ordre quand tout part en confettis, dire "je gere" avec panache, et transformer chaque permission en petit acte de magie. C'est super parce que tu as clairement l'aura, le jugement, et ce talent rare de rendre le chaos beaucoup plus mignon.</p>
+        `,
+        contract: `
+          <h3>Contrat d'admin eternelle</h3>
+          <div class="contract">
+            <p>Moi, nouvelle admin officiellement choisie, atteste solennellement que je ne peux plus partir. Toute tentative de fuite sera remplacee par une pause snack, un compliment, puis un retour heroique au panneau d'administration.</p>
+            <p class="signature">Signe : le destin, avec des paillettes</p>
+          </div>
+        `
+      };
 
       noButton.addEventListener("click", () => {
         noClicks += 1;
@@ -289,6 +541,14 @@
       yesButton.addEventListener("click", () => {
         document.body.classList.add("accepted");
       });
+
+      giftButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          giftBox.innerHTML = gifts[button.dataset.gift];
+          giftBox.classList.add("is-open");
+        });
+      });
+
     </script>
   </body>
 </html>
