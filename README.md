@@ -23,4 +23,4 @@ ghcr.io/tenshi-lab-kube/admin-gate:main
 
 À adapter si ton pipeline de build pousse l'image ailleurs.
 
-Pense aussi à remplacer `admin-gate.example.com` dans `k8s/ingress.yaml` par ton vrai domaine.
+Le service Kubernetes exposé en interne est `admin-gate.admin-gate.svc.cluster.local:80`.
